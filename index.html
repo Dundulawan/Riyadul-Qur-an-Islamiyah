@@ -1,0 +1,3530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riyadhul Qur'an Islamiyya - Islamic School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Islamic Theme Colors - Green & Gold */
+            --primary-color: #1a472a;
+            --secondary-color: #2d8c3c;
+            --accent-color: #d4af37;
+            --accent-light: #f4e4a6;
+            --text-color: #2c3e50;
+            --text-light: #5d6d7e;
+            --bg-color: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-light: #f5f5f5;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            
+            /* Fonts */
+            --font-heading: 'Amiri', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        .dark-theme {
+            --primary-color: #2d8c3c;
+            --secondary-color: #3fa750;
+            --accent-color: #e6c158;
+            --accent-light: #8b7355;
+            --text-color: #ecf0f1;
+            --text-light: #bdc3c7;
+            --bg-color: #121212;
+            --bg-secondary: #1e1e1e;
+            --bg-light: #2a2a2a;
+            --border-color: #444444;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            border: 2px solid var(--accent-color);
+        }
+
+        .logo-circle i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle,
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover,
+        .menu-toggle:hover {
+            background-color: var(--bg-light);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, rgba(26, 71, 42, 0.05) 0%, rgba(45, 140, 60, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%231a472a" opacity="0.03" d="M0,0 L100,0 L100,100 Q50,80 0,100"></path></svg>');
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .hero-quran {
+            background-color: rgba(26, 71, 42, 0.05);
+            border-right: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .quran-verse .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            text-align: right;
+            line-height: 1.6;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .quran-verse .translation {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .quran-verse .verse-ref {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 380px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid var(--accent-color);
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            animation: float 6s ease-in-out infinite;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .quran-float {
+            top: 20%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .mosque-float {
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .star-float {
+            bottom: 20%;
+            left: 40%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Quick Info Cards */
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(26, 71, 42, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            border: 2px solid var(--primary-color);
+        }
+
+        .info-icon i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .info-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .info-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--bg-secondary);
+            padding: 60px 0;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Daily Ayah Section */
+        .daily-ayah {
+            background-color: var(--bg-light);
+            padding: 40px 0;
+        }
+
+        .ayah-container {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .ayah-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .ayah-header i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .ayah-header h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .ayah-content {
+            margin-bottom: 25px;
+        }
+
+        .ayah-arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            direction: rtl;
+        }
+
+        .ayah-translation {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .ayah-reference {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .ayah-refresh {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ayah-refresh:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Achievements Timeline */
+        .achievements-timeline {
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .achievements-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            z-index: 2;
+            border: 3px solid var(--accent-color);
+        }
+
+        .timeline-content {
+            background: var(--bg-color);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .achievement-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(26, 71, 42, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .stat-badge i {
+            color: var(--accent-color);
+        }
+
+        .hifz-badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: #b8860b;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-image .image-frame {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 3px solid var(--accent-color);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-history {
+            margin-bottom: 40px;
+        }
+
+        .about-history p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .vision, .mission {
+            background-color: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .vision h3, .mission h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .vision h3 i, .mission h3 i {
+            color: var(--accent-color);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .value-item {
+            padding: 20px;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .value-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .value-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .program-card {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .program-card.highlight {
+            border: 2px solid var(--accent-color);
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .program-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .program-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .program-days {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .program-time {
+            padding: 15px 25px;
+            background-color: rgba(26, 71, 42, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .program-subjects {
+            padding: 20px 25px;
+            flex-grow: 1;
+        }
+
+        .program-subjects h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .program-subjects ul {
+            list-style: none;
+        }
+
+        .program-subjects li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .program-subjects li i {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        .program-age {
+            padding: 15px 25px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-light);
+        }
+
+        .program-btn {
+            display: block;
+            margin: 0 25px 25px;
+            text-align: center;
+        }
+
+        /* Memorization Method Section */
+        .method-section {
+            background-color: var(--bg-secondary);
+            padding: 60px 0;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .method-card {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .method-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .method-card ul {
+            list-style-type: none;
+        }
+
+        .method-card li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-light);
+        }
+
+        .method-card li i {
+            color: var(--primary-color);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Schedule Section */
+        .schedule-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            background-color: var(--border-color);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .schedule-table {
+            display: none;
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+
+        .schedule-table.active {
+            display: block;
+        }
+
+        .schedule-table h3 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+        }
+
+        .schedule-table table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .schedule-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            padding: 16px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .schedule-table tr:hover {
+            background-color: rgba(26, 71, 42, 0.05);
+        }
+
+        .special-schedule {
+            background-color: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .special-schedule h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent-color);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Admission Section */
+        .admission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .admission-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .admission-steps {
+            margin-bottom: 30px;
+        }
+
+        .admission-step {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .admission-step:before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .admission-steps ol {
+            counter-reset: step;
+            list-style-type: none;
+        }
+
+        .admission-step h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .admission-step p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .admission-requirements {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .admission-requirements h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admission-requirements ul {
+            list-style: none;
+        }
+
+        .admission-requirements li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .admission-requirements li i {
+            color: var(--primary-color);
+            margin-top: 3px;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        .contact-person {
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .contact-person h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-person p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Announcements Section */
+        .announcements {
+            background-color: var(--bg-secondary);
+            padding: 80px 0;
+        }
+
+        .announcements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .announcement-card {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .announcement-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .announcement-date {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .announcement-content {
+            padding: 25px;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            color: var(--text-light);
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #25D366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-link:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            margin-top: 40px;
+        }
+
+        .map-container h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-content i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .map-content p {
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-secondary);
+            padding: 60px 0 30px;
+            color: var(--text-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo-text h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .footer-logo-text p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--text-light);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-column p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Form Styles */
+        .form-header {
+            margin-bottom: 25px;
+        }
+
+        .form-header h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .admission-form-container {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: block;
+            min-height: 20px;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: #27ae60;
+            border: 1px solid #2ecc71;
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: #c0392b;
+            border: 1px solid #e74c3c;
+            display: block;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content,
+            .admission-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .quick-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .values-grid,
+            .vision-mission,
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .quick-info,
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .schedule-tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .tab-btn {
+                width: 100%;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-year {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .quran-verse .arabic {
+                font-size: 1.5rem;
+            }
+            
+            .ayah-arabic {
+                font-size: 1.6rem;
+            }
+            
+            .announcements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievement-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-circle">
+    			<img src="C:/Users/hp/Desktop/RiyadulQuran/Logo.jpg" alt="Riyadhul Qur'an Islamiyya Logo" style="width: 100%; height: 100%; object-fit: 			contain; border-radius: 100%;">
+			</div>
+                    <div class="logo-text">
+                        <h1>Riyadhul Qur'an<br>Islamiyya</h1>
+                        <p>Established 2014</p>
+                    </div>
+                </a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#programs" class="nav-link">Programs</a>
+                    <a href="#schedule" class="nav-link">Schedule</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#admission" class="nav-link">Admission</a>
+                    <a href="#announcements" class="nav-link">News</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Nurturing Hearts with Qur'anic Wisdom</h2>
+                    <p class="hero-subtitle">Riyadhul Qur'an Islamiyya provides comprehensive Islamic education with emphasis on Qur'anic memorization, Islamic studies, and moral character building since 2014.</p>
+                    
+                    <div class="hero-quran">
+                        <div class="quran-verse">
+                            <p class="arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</p>
+                            <p class="translation">"And recite the Qur'an with measured recitation."</p>
+                            <p class="verse-ref">(Qur'an 73:4)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#programs" class="btn btn-primary">Our Programs</a>
+                        <a href="#admission" class="btn btn-secondary">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="image-container">
+                        <div class="floating-element quran-float">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <div class="floating-element mosque-float">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <div class="floating-element star-float">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Info Cards -->
+            <div class="quick-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Tahfeez Section</h3>
+                        <p>Sat & Sun, 8:00 AM - 12:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Islamiyya Section</h3>
+                        <p>Sat-Wed, 3:30 PM - 5:30 PM</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Evening Section</h3>
+                        <p>8:00 PM - 9:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">210</div>
+                    <div class="stat-label">Tahfeez Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">454</div>
+                    <div class="stat-label">Islamiyya Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Qualified Teachers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">16+</div>
+                    <div class="stat-label">Huffaz Graduated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Ayah Section -->
+    <section class="daily-ayah">
+        <div class="container">
+            <div class="ayah-container">
+                <div class="ayah-header">
+                    <i class="fas fa-quran"></i>
+                    <h3>Daily Qur'an Ayah</h3>
+                </div>
+                <div class="ayah-content">
+                    <p class="ayah-arabic" id="dailyAyahArabic">وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ</p>
+                    <p class="ayah-translation" id="dailyAyahTranslation">"And indeed, you are of a great moral character."</p>
+                    <p class="ayah-reference" id="dailyAyahRef">Surah Al-Qalam (68:4)</p>
+                </div>
+                <button class="ayah-refresh" id="refreshAyah">
+                    <i class="fas fa-redo"></i> New Ayah
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Timeline -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Our School</h2>
+                <p class="section-subtitle">Established in 2014 to teach the Noble Qur'an and Islamic studies based on sound Islamic principles</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div style="width:100%; height:400px; background:linear-gradient(135deg, #1a472a 0%, #2d8c3c 100%); display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem; text-align:center; padding:20px;">
+                            <div>
+                                <i class="fas fa-mosque" style="font-size:4rem; margin-bottom:20px;"></i>
+                                <p>Riyadhul Qur'an Islamiyya</p>
+                                <p style="font-size:1rem; margin-top:10px;">203 Alkali Muhammad Hassan Street<br>Giginyu Nassarawa, Kano</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <div class="about-history">
+                        <h3>Our History</h3>
+                        <p>Riyadhul Qur'an Islamiyya was established in 2014 with the aim of teaching the Noble Qur'an and Islamic studies based on sound Islamic principles. The school started with 5 teachers and 35 students, holding classes on Saturdays and Sundays from 9:00 a.m. to 12:00 noon.</p>
+                        <p>By the grace of Allah, the school has experienced remarkable growth over the years and now operates three academic sections: Tahfeez, Islamiyyah, and Evening classes.</p>
+                    </div>
+                    
+                    <!-- Visual Achievements Timeline -->
+                    <div class="achievements-timeline">
+                        <h3 style="color: var(--primary-color); margin-bottom: 30px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-trophy"></i> Our Journey & Achievements
+                        </h3>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2014</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-school"></i> School Establishment</h4>
+                                <p>Riyadhul Qur'an Islamiyya was founded with 5 teachers and 35 students, offering weekend Islamic studies classes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-graduation-cap"></i> First Graduation</h4>
+                                <p>Successfully graduated our first batch of 14 students, marking a significant milestone in our educational journey.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat-badge">
+                                        <i class="fas fa-user-graduate"></i> 14 Graduates
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2017</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-chart-line"></i> Growth Continues</h4>
+                                <p>Second graduation ceremony with increased number of successful students.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat-badge">
+                                        <i class="fas fa-user-graduate"></i> 19 Graduates
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2019</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-landmark"></i> Major Milestones</h4>
+                                <p>Achieved two significant accomplishments that strengthened our institution's foundation.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat-badge">
+                                        <i class="fas fa-home"></i> Permanent Site Acquired
+                                    </div>
+                                    <div class="stat-badge">
+                                        <i class="fas fa-file-contract"></i> Registered with Nassarawa LGA
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-star"></i> Excellence in Hifz</h4>
+                                <p>Record graduation with significant increase in student numbers and our first Qur'an memorizers (Huffaz).</p>
+                                <div class="achievement-stats">
+                                    <div class="stat-badge">
+                                        <i class="fas fa-user-graduate"></i> 32 Graduates
+                                    </div>
+                                    <div class="stat-badge hifz-badge">
+                                        <i class="fas fa-book-quran"></i> 2 Huffaz
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-crown"></i> Record Achievement</h4>
+                                <p>Largest graduation batch with exceptional number of Qur'an memorizers, demonstrating our growing excellence in Hifz education.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat-badge">
+                                        <i class="fas fa-user-graduate"></i> 50 Graduates
+                                    </div>
+                                    <div class="stat-badge hifz-badge">
+                                        <i class="fas fa-book-quran"></i> 10 Huffaz
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-content">
+                                <h4><i class="fas fa-award"></i> Continuing Excellence</h4>
+                                <p>Latest graduation maintaining our tradition of producing qualified Qur'an memorizers and Islamic scholars.</p>
+                                <div class="achievement-stats">
+                                    <div class="stat-badge">
+                                        <i class="fas fa-user-graduate"></i> Latest Graduates
+                                    </div>
+                                    <div class="stat-badge hifz-badge">
+                                        <i class="fas fa-book-quran"></i> 4 Huffaz
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vision-mission">
+                        <div class="vision">
+                            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                            <p>To nurture a generation grounded in the Holy Qur'an, enriched with modern education, strong moral values, and practical life skills that enable them to become self-reliant and responsible members of society.</p>
+                        </div>
+                        <div class="mission">
+                            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                            <p>To provide structured and comprehensive Qur'anic memorization (Hifz) alongside modern academic education, instilling Islamic morals, discipline, and leadership qualities in our students.</p>
+                        </div>
+                    </div>
+
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <h4><i class="fas fa-star"></i> Tawheed & Taqwa</h4>
+                            <p>Foundation of faith and God-consciousness</p>
+                        </div>
+                        <div class="value-item">
+                            <h4><i class="fas fa-book-quran"></i> Qur'an-Centered Learning</h4>
+                            <p>Qur'an as the core of all education</p>
+                        </div>
+                        <div class="value-item">
+                            <h4><i class="fas fa-graduation-cap"></i> Knowledge with Practice</h4>
+                            <p>Ilm & Amal - learning with implementation</p>
+                        </div>
+                        <div class="value-item">
+                            <h4><i class="fas fa-heart"></i> Good Character (Akhlaq)</h4>
+                            <p>Developing excellent moral character</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="section programs" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Academic Programs</h2>
+                <p class="section-subtitle">Three comprehensive sections catering to different age groups and needs</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <h3>Tahfeez Section</h3>
+                        <p class="program-days">Saturdays & Sundays</p>
+                    </div>
+                    
+                    <div class="program-time">
+                        <i class="fas fa-clock"></i>
+                        <span>8:00 AM - 12:30 PM</span>
+                    </div>
+                    
+                    <div class="program-subjects">
+                        <h4>Program Focus:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Qur'an Memorization (Hifz)</li>
+                            <li><i class="fas fa-check-circle"></i> Tajweed Mastery</li>
+                            <li><i class="fas fa-check-circle"></i> Correct Recitation</li>
+                            <li><i class="fas fa-check-circle"></i> Teacher-Guided Learning</li>
+                            <li><i class="fas fa-check-circle"></i> Daily Revision System</li>
+                            <li><i class="fas fa-check-circle"></i> Regular Assessment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="program-age">
+                        <p><strong>Students:</strong> 210</p>
+                        <p><strong>Teachers:</strong> 7</p>
+                    </div>
+                    
+                    <a href="#admission" class="btn program-btn">Apply for Tahfeez</a>
+                </div>
+                
+                <div class="program-card highlight">
+                    <div class="program-badge">Most Popular</div>
+                    <div class="program-header">
+                        <div class="program-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3>Islamiyya Section</h3>
+                        <p class="program-days">Saturday to Wednesday</p>
+                    </div>
+                    
+                    <div class="program-time">
+                        <i class="fas fa-clock"></i>
+                        <span>3:30 PM - 5:30 PM</span>
+                    </div>
+                    
+                    <div class="program-subjects">
+                        <h4>Subjects Covered:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Qur'an Reading & Tajweed</li>
+                            <li><i class="fas fa-check-circle"></i> Ulumul Qur'an & Hadith</li>
+                            <li><i class="fas fa-check-circle"></i> Fiqh & Tauhid</li>
+                            <li><i class="fas fa-check-circle"></i> Sirah & Tahzib</li>
+                            <li><i class="fas fa-check-circle"></i> Arabic Language</li>
+                            <li><i class="fas fa-check-circle"></i> Adhkar & Islamic Manners</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="program-age">
+                        <p><strong>Students:</strong> 454</p>
+                        <p><strong>Teachers:</strong> 15</p>
+                        <p><strong>Age Group:</strong> 5 to 20 years</p>
+                    </div>
+                    
+                    <a href="#admission" class="btn program-btn">Enroll Now</a>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <h3>Evening Section</h3>
+                        <p class="program-days">Daily Classes</p>
+                    </div>
+                    
+                    <div class="program-time">
+                        <i class="fas fa-clock"></i>
+                        <span>8:00 PM - 9:00 PM</span>
+                    </div>
+                    
+                    <div class="program-subjects">
+                        <h4>Program Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> For Adults & Working Students</li>
+                            <li><i class="fas fa-check-circle"></i> Basic Islamic Studies</li>
+                            <li><i class="fas fa-check-circle"></i> Qur'an Reading Classes</li>
+                            <li><i class="fas fa-check-circle"></i> Flexible Timing</li>
+                            <li><i class="fas fa-check-circle"></i> Personalized Attention</li>
+                            <li><i class="fas fa-check-circle"></i> Beginner-Friendly</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="program-age">
+                        <p><strong>Students:</strong> 40</p>
+                        <p><strong>Teachers:</strong> 2</p>
+                    </div>
+                    
+                    <a href="#admission" class="btn program-btn">Join Evening Class</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memorization Method Section -->
+    <section class="section method-section" id="method">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Qur'an Memorization Method</h2>
+                <p class="section-subtitle">Structured approach to ensure quality Hifz with proper Tajweed</p>
+            </div>
+            
+            <div class="method-grid">
+                <div class="method-card">
+                    <h3><i class="fas fa-list-ol"></i> Memorization Process</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Correct Recitation (Tajweed First)</li>
+                        <li><i class="fas fa-check"></i> Small Portions (Gradual Memorization)</li>
+                        <li><i class="fas fa-check"></i> Repetition and Revision (Takrar & Muraja'ah)</li>
+                        <li><i class="fas fa-check"></i> Teacher-Guided Learning</li>
+                        <li><i class="fas fa-check"></i> Daily Listening and Correction</li>
+                        <li><i class="fas fa-check"></i> Strong Focus on Revision</li>
+                        <li><i class="fas fa-check"></i> Assessment and Progress Tracking</li>
+                        <li><i class="fas fa-check"></i> Spiritual Discipline Emphasis</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <h3><i class="fas fa-recycle"></i> Revision System</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Daily Muraja'ah under teacher supervision</li>
+                        <li><i class="fas fa-check"></i> Continuous assessment for accuracy</li>
+                        <li><i class="fas fa-check"></i> Regular revision sessions</li>
+                        <li><i class="fas fa-check"></i> Long-term retention focus</li>
+                        <li><i class="fas fa-check"></i> Individual progress tracking</li>
+                        <li><i class="fas fa-check"></i> Monthly memorization tests</li>
+                        <li><i class="fas fa-check"></i> Quarterly comprehensive revision</li>
+                        <li><i class="fas fa-check"></i> Annual memorization assessment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="section schedule" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Weekly Schedule</h2>
+                <p class="section-subtitle">Structured timetable for effective learning in all sections</p>
+            </div>
+            
+            <div class="schedule-tabs">
+                <button class="tab-btn active" data-tab="tahfeez">Tahfeez Schedule</button>
+                <button class="tab-btn" data-tab="islamiyya">Islamiyya Schedule</button>
+            </div>
+            
+            <div class="schedule-table active" id="tahfeezTab">
+                <h3>Tahfeez Section (Saturdays & Sundays)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8:00 - 9:00 AM</td>
+                            <td>Revision (Tilawa)</td>
+                        </tr>
+                        <tr>
+                            <td>9:00 - 10:30 AM</td>
+                            <td>Memorization (Tahfiz)</td>
+                        </tr>
+                        <tr>
+                            <td>10:30 - 11:00 AM</td>
+                            <td>Break</td>
+                        </tr>
+                        <tr>
+                            <td>11:00 - 11:30 AM</td>
+                            <td>Memorization (Tahfiz)</td>
+                        </tr>
+                        <tr>
+                            <td>11:30 - 12:00 PM</td>
+                            <td>Memorization Assessment</td>
+                        </tr>
+                        <tr>
+                            <td>12:00 - 12:30 PM</td>
+                            <td>Revision (Tilawa)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="schedule-table" id="islamiyyaTab">
+                <h3>Islamiyya Section (Saturday to Wednesday)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3:30 - 4:00 PM</td>
+                            <td>Asr Prayer & Du'a</td>
+                        </tr>
+                        <tr>
+                            <td>4:00 - 4:40 PM</td>
+                            <td>Qur'an Recitation Teaching</td>
+                        </tr>
+                        <tr>
+                            <td>4:40 - 5:05 PM</td>
+                            <td>First Subject Class</td>
+                        </tr>
+                        <tr>
+                            <td>5:05 - 5:30 PM</td>
+                            <td>Second Subject Class</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="special-schedule">
+                <h3><i class="fas fa-calendar-star"></i> Special Schedules</h3>
+                <p><strong>Ramadan Schedule:</strong> Classes adjusted to accommodate fasting students. Shorter sessions with emphasis on Qur'an recitation, memorization, and Islamic lessons. Extra spiritual programs such as Tafsir, Du'a, and prayers may be included.</p>
+                <p><strong>Holiday Schedule:</strong> School observes national and Islamic holidays. Catch-up or revision sessions may be arranged before or after long breaks. Special activities or seminars may be held during holidays to enhance learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">School Gallery</h2>
+                <p class="section-subtitle">Moments from our Islamic learning environment and school activities</p>
+            </div>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="classes">Class Activities</button>
+                <button class="filter-btn" data-filter="graduation">Graduation</button>
+                <button class="filter-btn" data-filter="events">School Events</button>
+                <button class="filter-btn" data-filter="facilities">Facilities</button>
+            </div>
+            
+            <div class="gallery-grid" id="galleryContainer">
+                <!-- Gallery items will be loaded via JavaScript -->
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="btn btn-primary" id="loadMoreBtn">
+                    <i class="fas fa-images"></i> Load More Photos
+                </button>
+            </div>
+        </div>
+        
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-nav lightbox-next" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-content">
+                <img class="lightbox-img" id="lightboxImage" src="" alt="">
+                <div class="lightbox-caption" id="lightboxCaption"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section class="section admission" id="admission">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Admission Process</h2>
+                <p class="section-subtitle">Join our Islamic learning community with a simple enrollment process</p>
+            </div>
+            
+            <div class="admission-content">
+                <div class="admission-info">
+                    <h3>Admission Requirements & Process</h3>
+                    
+                    <div class="admission-steps">
+                        <ol>
+                            <li class="admission-step">
+                                <h4>Application Submission</h4>
+                                <p>Parents or guardians submit a completed application form along with required documents (birth certificate, previous school records, and passport-sized photo).</p>
+                            </li>
+                            <li class="admission-step">
+                                <h4>Screening / Assessment</h4>
+                                <p>Students are assessed for basic Qur'an reading ability, age suitability, and readiness for memorization or Islamic studies.</p>
+                            </li>
+                            <li class="admission-step">
+                                <h4>Interview / Parent Meeting</h4>
+                                <p>A brief meeting with parents or guardians is held to discuss school rules, curriculum, and expectations.</p>
+                            </li>
+                            <li class="admission-step">
+                                <h4>Enrollment / Registration</h4>
+                                <p>Successful candidates are enrolled and given a timetable, school materials, and instructions for joining classes.</p>
+                            </li>
+                            <li class="admission-step">
+                                <h4>Orientation</h4>
+                                <p>New students and parents attend a short orientation session to familiarize them with school policies, schedules, and teachers.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="admission-requirements">
+                        <h4><i class="fas fa-requirements"></i> Admission Requirements</h4>
+                        <ul>
+                            <li><i class="fas fa-file-alt"></i> Completed application form submitted by parent/guardian</li>
+                            <li><i class="fas fa-certificate"></i> Birth certificate or proof of age</li>
+                            <li><i class="fas fa-image"></i> Passport-sized photograph of the student</li>
+                            <li><i class="fas fa-school"></i> Previous school records (if applicable)</li>
+                            <li><i class="fas fa-book-reader"></i> Basic Qur'an reading ability (for Tahfeez applicants)</li>
+                            <li><i class="fas fa-user-check"></i> Commitment to regular attendance, discipline, and good character</li>
+                            <li><i class="fas fa-handshake"></i> Parental/guardian consent and support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-person">
+                        <h4><i class="fas fa-user-tie"></i> Contact Person for Admissions</h4>
+                        <p><strong>Aminu Bala</strong><br>
+                        For admission inquiries and application processing</p>
+                    </div>
+                </div>
+                
+                <div class="admission-form-container">
+                    <div class="form-header">
+                        <h3>Online Registration Form</h3>
+                        <p>Fill out the form below to begin the admission process for your child</p>
+                    </div>
+                    
+                    <form id="admissionForm">
+                        <div class="form-group">
+                            <label for="studentName">Student Full Name *</label>
+                            <input type="text" id="studentName" placeholder="Enter student's full name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentAge">Age *</label>
+                                <input type="number" id="studentAge" min="5" max="30" placeholder="Age" required>
+                                <span class="error-message" id="ageError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="studentGender">Gender *</label>
+                                <select id="studentGender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <span class="error-message" id="genderError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="programSelect">Program Selection *</label>
+                            <select id="programSelect" required>
+                                <option value="">Select Program</option>
+                                <option value="tahfeez">Tahfeez Section (Weekends)</option>
+                                <option value="islamiyya">Islamiyya Section (Weekdays)</option>
+                                <option value="evening">Evening Section (Adults)</option>
+                            </select>
+                            <span class="error-message" id="programError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="parentName">Parent/Guardian Name *</label>
+                            <input type="text" id="parentName" placeholder="Enter parent/guardian name" required>
+                            <span class="error-message" id="parentError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="parentPhone">Phone Number *</label>
+                            <input type="tel" id="parentPhone" placeholder="Enter phone number" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" placeholder="Any additional information or questions..." rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">Submit Application</button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="section announcements" id="announcements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">News & Announcements</h2>
+                <p class="section-subtitle">Latest updates from Riyadhul Qur'an Islamiyya School</p>
+            </div>
+            
+            <div class="announcements-grid" id="announcementsContainer">
+                <!-- Announcements will be loaded via JavaScript -->
+            </div>
+            
+            <div class="announcement-form">
+                <h3><i class="fas fa-bullhorn"></i> Add New Announcement (Admin)</h3>
+                <div class="form-row">
+                    <input type="text" id="announcementTitle" placeholder="Announcement Title">
+                    <input type="text" id="announcementDate" placeholder="Date (e.g. March 15, 2024)" value="">
+                </div>
+                <textarea id="announcementContent" placeholder="Announcement content..." rows="3"></textarea>
+                <button class="btn btn-secondary" id="addAnnouncement">
+                    <i class="fas fa-plus"></i> Add Announcement
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch with Riyadhul Qur'an Islamiyya School</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Our Location</h3>
+                            <p>NO. 203 Alkali Muhammad Hassan Street</p>
+                            <p>Giginyu Nassarawa, Kano</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone Numbers</h3>
+                            <p>08067429818</p>
+                            <p>08091917639</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p>Click to chat directly:</p>
+                            <a href="https://wa.me/2348067429818?text=Assalamu%20Alaikum!%20I%20have%20a%20question%20about%20Riyadhul%20Qur'an%20Islamiyya%20School" class="whatsapp-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Address</h3>
+                            <p>riyadhulquranislamiyya@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Your Name *</label>
+                            <input type="text" id="contactName" placeholder="Enter your name" required>
+                            <span class="error-message" id="contactNameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email *</label>
+                            <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                            <span class="error-message" id="contactEmailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <input type="text" id="contactSubject" placeholder="Enter subject" required>
+                            <span class="error-message" id="contactSubjectError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message *</label>
+                            <textarea id="contactMessage" placeholder="Enter your message" rows="5" required></textarea>
+                            <span class="error-message" id="contactMessageError"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        
+                        <div class="form-message" id="contactFormMessage"></div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <h3>Our Location</h3>
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p><strong>Riyadhul Qur'an Islamiyya School</strong></p>
+                        <p>NO. 203 Alkali Muhammad Hassan Street</p>
+                        <p>Giginyu Nassarawa, Kano State</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-circle">
+   			 <img src="C:/Users/hp/Desktop/RiyadulQuran/Logo.jpg" alt="Riyadhul Qur'an Islamiyya Logo" style="width: 100%; height: 100%; object-fit: 			contain; border-radius: 50%;">
+				</div>
+                    <div class="footer-logo-text">
+                        <h2>Riyadhul Qur'an<br>Islamiyya</h2>
+                        <p>Established 2014</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#programs">Programs</a>
+                        <a href="#schedule">Schedule</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#admission">Admission</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Our Programs</h3>
+                        <a href="#programs">Tahfeez Section</a>
+                        <a href="#programs">Islamiyya Section</a>
+                        <a href="#programs">Evening Section</a>
+                        <a href="#schedule">Class Schedules</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Contact Info</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Giginyu Nassarawa, Kano</p>
+                        <p><i class="fas fa-phone"></i> 08067429818</p>
+                        <p><i class="fas fa-phone"></i> 08091917639</p>
+                        <p><i class="fas fa-envelope"></i> riyadhulquranislamiyya@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2014 - <span id="currentYear"></span> Riyadhul Qur'an Islamiyya School. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Riyadhul Qur'an Islamiyya Website JavaScript
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all components
+            initMobileNavigation();
+            initSmoothScrolling();
+            initThemeToggle();
+            initDailyAyah();
+            initScheduleTabs();
+            initGallery();
+            initAnnouncements();
+            initAdmissionForm();
+            initContactForm();
+            initBackToTop();
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Set current date in announcement form
+            document.getElementById('announcementDate').value = getCurrentDate();
+            
+            // Add scroll animations
+            initScrollAnimations();
+            
+            // Set Islamic greeting based on time
+            setIslamicGreeting();
+        });
+
+        // Mobile Navigation Toggle
+        function initMobileNavigation() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuToggle.querySelector('i').classList.toggle('fa-bars');
+                menuToggle.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Close menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    
+                    // Update active link
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        // Smooth Scrolling
+        function initSmoothScrolling() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 90,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Theme Toggle (Light/Dark Mode)
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = themeToggle.querySelector('i');
+            
+            // Check for saved theme or prefer-color-scheme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+            
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-theme');
+                
+                if (document.body.classList.contains('dark-theme')) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        }
+
+        // Daily Qur'an Ayah Display
+        function initDailyAyah() {
+            const ayahs = [
+                {
+                    arabic: "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+                    translation: "Indeed, with hardship comes ease.",
+                    ref: "Surah Ash-Sharh (94:6)"
+                },
+                {
+                    arabic: "وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ",
+                    translation: "And indeed, you are of a great moral character.",
+                    ref: "Surah Al-Qalam (68:4)"
+                },
+                {
+                    arabic: "يَا أَيُّهَا الَّذِينَ آمَنُوا اصْبِرُوا وَصَابِرُوا",
+                    translation: "O you who have believed, persevere and endure.",
+                    ref: "Surah Ali 'Imran (3:200)"
+                },
+                {
+                    arabic: "وَقُل رَّبِّ زِدْنِي عِلْمًا",
+                    translation: "And say: My Lord, increase me in knowledge.",
+                    ref: "Surah Taha (20:114)"
+                },
+                {
+                    arabic: "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+                    translation: "Indeed, Allah is with the patient.",
+                    ref: "Surah Al-Baqarah (2:153)"
+                },
+                {
+                    arabic: "وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا",
+                    translation: "And recite the Qur'an with measured recitation.",
+                    ref: "Surah Al-Muzzammil (73:4)"
+                },
+                {
+                    arabic: "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا",
+                    translation: "And whoever fears Allah, He will make for him a way out.",
+                    ref: "Surah At-Talaq (65:2)"
+                }
+            ];
+            
+            const arabicElement = document.getElementById('dailyAyahArabic');
+            const translationElement = document.getElementById('dailyAyahTranslation');
+            const refElement = document.getElementById('dailyAyahRef');
+            const refreshButton = document.getElementById('refreshAyah');
+            
+            // Get random ayah index based on day of week (for consistency)
+            function getDailyAyahIndex() {
+                const today = new Date();
+                const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+                return dayOfYear % ayahs.length;
+            }
+            
+            function displayAyah(index) {
+                arabicElement.textContent = ayahs[index].arabic;
+                translationElement.textContent = ayahs[index].translation;
+                refElement.textContent = ayahs[index].ref;
+            }
+            
+            // Display today's ayah
+            displayAyah(getDailyAyahIndex());
+            
+            // Refresh ayah on button click
+            refreshButton.addEventListener('click', function() {
+                let newIndex;
+                do {
+                    newIndex = Math.floor(Math.random() * ayahs.length);
+                } while (newIndex === getDailyAyahIndex());
+                
+                displayAyah(newIndex);
+                
+                // Button animation
+                this.querySelector('i').classList.add('fa-spin');
+                setTimeout(() => {
+                    this.querySelector('i').classList.remove('fa-spin');
+                }, 500);
+            });
+        }
+
+        // Schedule Tabs
+        function initScheduleTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.schedule-table');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}Tab`).classList.add('active');
+                });
+            });
+        }
+
+        // Gallery System
+        function initGallery() {
+            const galleryData = [
+                {
+                    id: 1,
+                    src: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    category: "classes",
+                    title: "Qur'an Learning Session",
+                    description: "Students engaged in Qur'an recitation class under teacher supervision"
+                },
+                {
+                    id: 2,
+                    src: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    category: "classes",
+                    title: "Tajweed Practice",
+                    description: "Learning proper Qur'an recitation rules"
+                },
+                {
+                    id: 3,
+                    src: "https://images.unsplash.com/photo-1517607648415-b431854daa86?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    category: "graduation",
+                    title: "Graduation Ceremony 2022",
+                    description: "Our largest batch of graduates with 10 Huffaz"
+                },
+                {
+                    id: 4,
+                    src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    category: "events",
+                    title: "Eid Celebration",
+                    description: "Annual Eid celebration at school premises"
+                },
+                {
+                    id: 5,
+                    src: "https://images.unsplash.com/photo-1526662098120-729f22b5627e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    category: "facilities",
+                    title: "School Library",
+                    description: "Well-stocked Islamic literature library"
+                },
+                {
+                    id: 6,
+                    src: "https://images.unsplash.com/photo-1545983731-2e45305b9102?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    category: "classes",
+                    title: "Islamic Studies Class",
+                    description: "Learning Islamic history and Seerah"
+                }
+            ];
+            
+            const galleryContainer = document.getElementById('galleryContainer');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            
+            let currentFilter = 'all';
+            let visibleItems = 4;
+            
+            // Render gallery items
+            function renderGallery(filter = 'all', count = visibleItems) {
+                galleryContainer.innerHTML = '';
+                
+                const filteredItems = filter === 'all' 
+                    ? galleryData 
+                    : galleryData.filter(item => item.category === filter);
+                
+                const itemsToShow = filteredItems.slice(0, count);
+                
+                itemsToShow.forEach(item => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.setAttribute('data-category', item.category);
+                    galleryItem.setAttribute('data-id', item.id);
+                    
+                    galleryItem.innerHTML = `
+                        <img src="${item.src}" alt="${item.title}" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h4>${item.title}</h4>
+                            <p>${item.description}</p>
+                        </div>
+                        <span class="gallery-category">${item.category.toUpperCase()}</span>
+                    `;
+                    
+                    galleryContainer.appendChild(galleryItem);
+                });
+                
+                // Update load more button
+                if (count >= filteredItems.length) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'inline-block';
+                }
+                
+                // Add click event to gallery items
+                addGalleryItemEvents();
+            }
+            
+            // Filter gallery items
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Reset visible items count
+                    visibleItems = 4;
+                    currentFilter = filter;
+                    
+                    // Render filtered gallery
+                    renderGallery(filter, visibleItems);
+                });
+            });
+            
+            // Load more items
+            loadMoreBtn.addEventListener('click', function() {
+                visibleItems += 4;
+                renderGallery(currentFilter, visibleItems);
+            });
+            
+            // Add lightbox functionality
+            function addGalleryItemEvents() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightboxImage');
+                const lightboxCaption = document.getElementById('lightboxCaption');
+                const lightboxClose = document.getElementById('lightboxClose');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                
+                let currentIndex = 0;
+                let currentItems = [];
+                
+                // Open lightbox
+                galleryItems.forEach((item, index) => {
+                    item.addEventListener('click', function() {
+                        const category = this.getAttribute('data-category');
+                        const filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                        
+                        currentItems = filter === 'all' 
+                            ? galleryData 
+                            : galleryData.filter(item => item.category === filter);
+                        
+                        const itemId = parseInt(this.getAttribute('data-id'));
+                        currentIndex = currentItems.findIndex(item => item.id === itemId);
+                        
+                        updateLightbox();
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                });
+                
+                // Update lightbox content
+                function updateLightbox() {
+                    if (currentItems[currentIndex]) {
+                        lightboxImage.src = currentItems[currentIndex].src;
+                        lightboxCaption.textContent = currentItems[currentIndex].description;
+                    }
+                }
+                
+                // Navigation
+                prevBtn.addEventListener('click', function() {
+                    currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                    updateLightbox();
+                });
+                
+                nextBtn.addEventListener('click', function() {
+                    currentIndex = (currentIndex + 1) % currentItems.length;
+                    updateLightbox();
+                });
+                
+                // Close lightbox
+                lightboxClose.addEventListener('click', function() {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', function(e) {
+                    if (!lightbox.classList.contains('active')) return;
+                    
+                    if (e.key === 'Escape') {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                    
+                    if (e.key === 'ArrowLeft') {
+                        currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                        updateLightbox();
+                    }
+                    
+                    if (e.key === 'ArrowRight') {
+                        currentIndex = (currentIndex + 1) % currentItems.length;
+                        updateLightbox();
+                    }
+                });
+                
+                // Close on outside click
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        lightbox.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Initial render
+            renderGallery();
+        }
+
+        // Announcements System
+        function initAnnouncements() {
+            const announcements = [
+                {
+                    title: "New Tahfeez Batch Starting",
+                    date: "April 15, 2024",
+                    content: "We are pleased to announce that a new Tahfeez (Qur'an memorization) batch will start from April 15, 2024. Limited seats available."
+                },
+                {
+                    title: "Parent-Teacher Meeting",
+                    date: "March 28, 2024",
+                    content: "Quarterly parent-teacher meeting will be held on March 28, 2024. All parents are requested to attend."
+                },
+                {
+                    title: "Eid Celebration at School",
+                    date: "April 10, 2024",
+                    content: "Join us for our annual Eid celebration at the school premises. Special activities and food will be arranged for students."
+                }
+            ];
+            
+            const announcementsContainer = document.getElementById('announcementsContainer');
+            const addAnnouncementBtn = document.getElementById('addAnnouncement');
+            const announcementTitle = document.getElementById('announcementTitle');
+            const announcementDate = document.getElementById('announcementDate');
+            const announcementContent = document.getElementById('announcementContent');
+            
+            function renderAnnouncements() {
+                announcementsContainer.innerHTML = '';
+                
+                announcements.forEach((announcement, index) => {
+                    const announcementCard = document.createElement('div');
+                    announcementCard.className = 'announcement-card';
+                    announcementCard.innerHTML = `
+                        <div class="announcement-header">
+                            <h4>${announcement.title}</h4>
+                            <span class="announcement-date">${announcement.date}</span>
+                        </div>
+                        <div class="announcement-content">
+                            <p>${announcement.content}</p>
+                        </div>
+                    `;
+                    announcementsContainer.appendChild(announcementCard);
+                });
+            }
+            
+            // Initial render
+            renderAnnouncements();
+            
+            // Add new announcement
+            addAnnouncementBtn.addEventListener('click', function() {
+                const title = announcementTitle.value.trim();
+                const date = announcementDate.value.trim();
+                const content = announcementContent.value.trim();
+                
+                if (!title || !date || !content) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                announcements.unshift({
+                    title,
+                    date,
+                    content
+                });
+                
+                renderAnnouncements();
+                
+                // Clear form
+                announcementTitle.value = '';
+                announcementDate.value = getCurrentDate();
+                announcementContent.value = '';
+                
+                // Show confirmation
+                alert('Announcement added successfully!');
+            });
+        }
+
+        // Admission Form Validation
+        function initAdmissionForm() {
+            const form = document.getElementById('admissionForm');
+            const studentName = document.getElementById('studentName');
+            const studentAge = document.getElementById('studentAge');
+            const studentGender = document.getElementById('studentGender');
+            const programSelect = document.getElementById('programSelect');
+            const parentName = document.getElementById('parentName');
+            const parentPhone = document.getElementById('parentPhone');
+            const formMessage = document.getElementById('formMessage');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error messages
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                formMessage.style.display = 'none';
+                
+                let isValid = true;
+                
+                // Validate student name
+                if (!studentName.value.trim()) {
+                    document.getElementById('nameError').textContent = 'Student name is required';
+                    isValid = false;
+                }
+                
+                // Validate age
+                if (!studentAge.value) {
+                    document.getElementById('ageError').textContent = 'Age is required';
+                    isValid = false;
+                } else if (studentAge.value < 5 || studentAge.value > 30) {
+                    document.getElementById('ageError').textContent = 'Age must be between 5 and 30';
+                    isValid = false;
+                }
+                
+                // Validate gender
+                if (!studentGender.value) {
+                    document.getElementById('genderError').textContent = 'Gender is required';
+                    isValid = false;
+                }
+                
+                // Validate program selection
+                if (!programSelect.value) {
+                    document.getElementById('programError').textContent = 'Please select a program';
+                    isValid = false;
+                }
+                
+                // Validate parent name
+                if (!parentName.value.trim()) {
+                    document.getElementById('parentError').textContent = 'Parent name is required';
+                    isValid = false;
+                }
+                
+                // Validate phone
+                if (!parentPhone.value.trim()) {
+                    document.getElementById('phoneError').textContent = 'Phone number is required';
+                    isValid = false;
+                } else if (!isValidPhone(parentPhone.value)) {
+                    document.getElementById('phoneError').textContent = 'Please enter a valid Nigerian phone number';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Form is valid, show success message
+                    formMessage.textContent = 'Application submitted successfully! Our admission officer (Aminu Bala) will contact you soon at ' + parentPhone.value;
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Scroll to message
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    // Form is invalid, show error message
+                    formMessage.textContent = 'Please fix the errors above before submitting.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                }
+            });
+            
+            function isValidPhone(phone) {
+                // Nigerian phone number validation
+                const phoneRegex = /^(0)(7|8|9)(0|1)\d{8}$/;
+                return phoneRegex.test(phone.replace(/\s/g, ''));
+            }
+        }
+
+        // Contact Form Validation
+        function initContactForm() {
+            const form = document.getElementById('contactForm');
+            const contactName = document.getElementById('contactName');
+            const contactEmail = document.getElementById('contactEmail');
+            const contactSubject = document.getElementById('contactSubject');
+            const contactMessage = document.getElementById('contactMessage');
+            const contactFormMessage = document.getElementById('contactFormMessage');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error messages
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                contactFormMessage.style.display = 'none';
+                
+                let isValid = true;
+                
+                // Validate name
+                if (!contactName.value.trim()) {
+                    document.getElementById('contactNameError').textContent = 'Name is required';
+                    isValid = false;
+                }
+                
+                // Validate email
+                if (!contactEmail.value.trim()) {
+                    document.getElementById('contactEmailError').textContent = 'Email is required';
+                    isValid = false;
+                } else if (!isValidEmail(contactEmail.value)) {
+                    document.getElementById('contactEmailError').textContent = 'Please enter a valid email';
+                    isValid = false;
+                }
+                
+                // Validate subject
+                if (!contactSubject.value.trim()) {
+                    document.getElementById('contactSubjectError').textContent = 'Subject is required';
+                    isValid = false;
+                }
+                
+                // Validate message
+                if (!contactMessage.value.trim()) {
+                    document.getElementById('contactMessageError').textContent = 'Message is required';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Form is valid, show success message
+                    contactFormMessage.textContent = 'Message sent successfully! We will respond to ' + contactEmail.value + ' soon.';
+                    contactFormMessage.className = 'form-message success';
+                    contactFormMessage.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                    
+                    // Scroll to message
+                    contactFormMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    // Form is invalid, show error message
+                    contactFormMessage.textContent = 'Please fix the errors above before submitting.';
+                    contactFormMessage.className = 'form-message error';
+                    contactFormMessage.style.display = 'block';
+                }
+            });
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        }
+
+        // Back to Top Button
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Scroll Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe sections for animation
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Timeline animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(20px)';
+                item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                timelineObserver.observe(item);
+            });
+        }
+
+        // Helper Functions
+        function getCurrentDate() {
+            const now = new Date();
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            return now.toLocaleDateString('en-US', options);
+        }
+
+        function setIslamicGreeting() {
+            const hour = new Date().getHours();
+            let greeting = 'Assalamu Alaikum';
+            
+            if (hour >= 5 && hour < 12) {
+                greeting = 'Assalamu Alaikum wa Rahmatullah (Good Morning)';
+            } else if (hour >= 12 && hour < 17) {
+                greeting = 'Assalamu Alaikum wa Rahmatullah (Good Afternoon)';
+            } else if (hour >= 17 && hour < 21) {
+                greeting = 'Assalamu Alaikum wa Rahmatullah (Good Evening)';
+            } else {
+                greeting = 'Assalamu Alaikum wa Rahmatullah (Good Night)';
+            }
+            
+            console.log(greeting + ' - Welcome to Riyadhul Qur\'an Islamiyya');
+        }
+    </script>
+</body>
+</html>
